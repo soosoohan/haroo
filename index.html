@@ -523,14 +523,13 @@ document.getElementById('hintText').textContent = currentHint ? `💡: ${current
 }
 
 // ====== 7) 초기 로드 & 공유 버튼 바인딩 ======
-document.getElementById('titleHeading').textContent = "하루 모음";
 window.onload = function() {
+  initLanguage();
   createConsonantButtons();
   startNewGame();
   
 document.getElementById('btnShare').addEventListener('click', shareResult);
   document.getElementById('btnCopy').addEventListener('click', copyShareText);
-  document.getElementById('btnHint').addEventListener('click', toggleHint);
 };
 </script>
 </body>
