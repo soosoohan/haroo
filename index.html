@@ -258,26 +258,17 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.25);
         </button>
     </div>
 </div>
-
-
 <div id="toast" style="display:none; position:fixed; bottom:30px; left:50%; transform:translateX(-50%); background:#4A628A; color:white; padding:10px 20px; border-radius:20px; font-size:0.95em; box-shadow:0 4px 12px rgba(0,0,0,0.2); z-index:1000; transition:opacity 0.3s;">
     <span class="lang-ko">복사됨</span>
     <span class="lang-en">Copied</span>
 </div>
-
-
-
             </div>
-       
-
         <div class="consonant-section">
             <h3 class="consonant-title lang-ko">자음을 선택하세요 </h3>
 
             <h3 class="consonant-title lang-en">Choose a consonant. </h3>
             <div class="consonant-grid" id="consonantGrid"><!-- 자음 버튼 --></div>
         </div>
-
-     
       <div class="game-info">
     <div class="stats" id="gameStats">
         <span class="lang-ko">맞음</span><span class="lang-en"> Correct</span>: 0 |
@@ -328,7 +319,7 @@ const schedule = [
   { date: "2026-11-20", sentence: "가는 말이 고와야 오는 말이 곱다", hint: "내가 잘해야 상대도 잘한다" },
   { date: "2026-11-21", sentence: "하룻강아지 범 무서운 줄 모른다", hint: "주제 모르고 나댄다" },
   { date: "2026-11-22", sentence: "사람은 실수로 성장한다", hint: "실수가 스승이다" },
-  { date: "2026-11-23", sentence: "생일 축하해요", hint: "생일 축하" },
+  { date: "2026-11-23", sentence: "첫술에 배부르랴", hint: "처음부터 만족할 수 없다" }
   { date: "2026-11-24", sentence: "오늘도 수고 많으셨어요", hint: "하루 노고 치하" },
   { date: "2026-11-25", sentence: "늦게 배운 도둑질이 날 새는 줄 모른다", hint: "재미들려 시간 가는 줄 모른다​​​​​​​​​​​​​​​​" },
   { date: "2026-11-26", sentence: "고통이 지나면 기쁨이 온다", hint: "시련 뒤의 보상" },
@@ -347,25 +338,21 @@ const schedule = [
   { date: "2026-12-09", sentence: "마음은 보이지 않아도 느껴져요", hint: "눈에 안 보이는 온기" },
   { date: "2026-12-10", sentence: "피할 수 없으면 즐겨라", hint: "받아들이는 태도" },
   { date: "2026-12-11", sentence: "세월이 약이다", hint: "괴로운 일은 시간이 지나면 덜하다" },
-  { date: "2026-12-12", sentence: "우리 다시 만날 수 있을까요", hint: "불확실한 이별" },
+  { date: "2026-12-12", sentence: "가루는 칠수록 고와지고 말은 할수록 거칠어진다", hint: "말이 길어지면 말다툼이 된다" },
   { date: "2026-12-13", sentence: "바람이 불지 않으면 노를 저어라", hint: "스스로 움직이기" },
   { date: "2026-12-14", sentence: "수고했어요 오늘도", hint: "하루 마무리 격려" },
   { date: "2026-12-15", sentence: "가시나무에 연줄 걸리듯", hint: "이러지도 저러지도 못하거나 관계가 얽혀있음" },
   { date: "2026-12-16", sentence: "도랑 치고 가재 잡는다", hint: "일석이조" },
   { date: "2026-12-17", sentence: "우물 가서 숭늉 찾는다", hint: "너무 급한 성격을 조롱함" },
   { date: "2026-12-18", sentence: "수고하셨어요", hint: "노고 인정" },
-  { date: "2026-12-19", sentence: "너는 나의 봄이다", hint: "계절에 빗댄 사랑" },
+  { date: "2026-12-19", sentence: "두려움은 용기로 사라집니다", hint: "맞서면 작아지는 것" },
   { date: "2026-12-20", sentence: "말 한마디에 천냥 빚을 갚는다", hint: "말을 잘하면 큰일도 해결된다" },
   { date: "2026-12-21", sentence: "행동이 모든 성공의 시작입니다", hint: "먼저 움직이기" },
   { date: "2026-12-22", sentence: "오는 말이 고와야 가는 말이 곱다", hint: "남에게 대접받으려면 남을 대접하라" },
   { date: "2026-12-23", sentence: "말보다 행동이 먼저다", hint: "실천이 증명이다" },
   { date: "2026-12-24", sentence: "모든 순간이 소중해요", hint: "지금 이 시간도" },
   { date: "2026-12-25", sentence: "불면 날까 쥐면 꺼질까", hint: "자식을 끔찍이 아낀다" },
-  { date: "2026-12-26", sentence: "낮 말은 새가 듣고 밤 말은 쥐가 듣는다", hint: "말조심하라" },
-  { date: "2026-12-27", sentence: "네 자신의 불행을 생각하지 말라", hint: "긍정적 시선 갖기" },
-  { date: "2026-12-28", sentence: "두려움은 용기로 사라집니다", hint: "맞서면 작아지는 것" },
-  { date: "2026-12-29", sentence: "가루는 칠수록 고와지고 말은 할수록 거칠어진다", hint: "말이 길어지면 말다툼이 된다" },
-  { date: "2026-12-30", sentence: "첫술에 배부르랴", hint: "처음부터 만족할 수 없다" }
+  { date: "2026-12-26", sentence: "낮 말은 새가 듣고 밤 말은 쥐가 듣는다", hint: "말조심하라" }
  ];
 
 // ====== 2) 유틸: KST 날짜(YYYY-MM-DD) + 테스트용 쿼리 ======
