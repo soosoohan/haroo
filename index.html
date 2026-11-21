@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>하루 모음 (Daily Moeum) - 매일 푸는 한글 단어 행맨 | 수수랜드 Soosooland</title>
 <script>
   if (window.top !== window.self) {
     window.top.location = "https://soosooland.com";
@@ -17,19 +22,68 @@
       gtag('js', new Date());
       gtag('config', 'G-4YZHC1G9FN');  
 </script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
-<title>Har Moeum - Daily Korean Puzzle Challenge | Soosooland</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="매일 새로워지는 단어 하나! 하루 한 문제씩 도전하는 한글 워들 스타일 모음 퀴즈. Daily Korean Wordle & Vowel Puzzle">
+<meta name="keywords" content="하루 모음, 수수랜드, Soosooland, 한글 워들, Daily Korean wordle, 오늘의 한글 퀴즈, 매일 단어 게임, Korean daily puzzle">
+<meta name="author" content="Soosooland">
+
+<!-- Open Graph -->
+
+<meta property="og:title" content="하루 모음 (Daily Moeum) - 매일 푸는 한글 단어 행맨">
+<meta property="og:description" content="매일 새로워지는 단어 하나! 하루 한 문제씩 도전하는 한글 워들 스타일 모음 퀴즈. Daily Korean Wordle & Vowel Puzzle">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://soosooland.com/haroo/">
+<meta property="og:image" content="https://soosooland.com/images/moeum.jpeg">
+<meta property="og:site_name" content="Soosooland">
+<meta name="twitter:card" content="summary">  
+<meta name="twitter:title" content="하루 모음 (Daily Moeum) - 매일 푸는 한글 단어 행맨">
+<meta name="twitter:description" content="매일 새로워지는 단어 하나! 하루 한 문제씩 도전하는 한글 워들 스타일 모음 퀴즈. Daily Korean Wordle & Vowel Puzzle">
+<meta name="twitter:image" content="https://soosooland.com/images/moeum.jpeg">
+<link rel="canonical" href="https://soosooland.com/haroo/">
+<link rel="alternate" hreflang="en" href="https://soosooland.com/haroo/">
+<link rel="alternate" hreflang="ko" href="https://soosooland.com/haroo/">
+<link rel="alternate" hreflang="x-default" href="https://soosooland.com/haroo/">
+  
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
 <link rel="stylesheet" href="https://soosooland.com/css/protection.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Daily Moeum",
+  "alternateName": "하루모음",
+  "description": "Daily Korean Puzzle Challenge. Guess hidden consonants with only vowels revealed",
+  "url": "https://soosooland.com/haroo/",
+  "genre": "Puzzle",
+  "gamePlatform": "Web browser",
+  "playMode": "SinglePlayer",
+  "inLanguage": ["en", "ko"]
+}
+</script>
 <script src="https://soosooland.com/js/protection.js"></script>
-   
+  
 <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body { font-family: 'Malgun Gothic', sans-serif; background: #145454; min-height: 100vh; padding: 20px; }
         .container { max-width: 800px; margin: 0 auto; }
         .header { text-align: center; margin-bottom: 30px; }
-        .title { font-size: 2.5em; font-weight: bold; color: #B9E5E8; margin-bottom: 10px; }
+.banner-title {
+    margin-top: 60px;   /* 위쪽 여백 */
+    margin-bottom: 20px;   /* 위쪽 여백 */
+    font-size: 0;
+}
+
+.banner-title img {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: 0 auto;
+}
+  .title { font-size: 2.5em; font-weight: bold; color: #B9E5E8; margin-bottom: 10px; }
         .subtitle { color: #B9E5E8; font-size: 1.1em; }
  #lang-toggle {
     position: fixed;
@@ -150,14 +204,11 @@
 <button id="lang-toggle" onclick="toggleLang()">English</button>
     <div class="container">
         <div class="header">
-     
-       <h1 class="title lang-ko" id="titleHeading">하루 모음</h1>
-       <h1 class="title lang-en" id="titleHeading">Haroo  Moeum </h1>
-
-
+     <h1 class="banner-title"><img src="https://soosooland.com/haroo/haroomoeum.jpeg" alt="하루모음 Haroo  Moeum"></h1>
+      
             <p class="subtitle lang-ko"> 하루모음의 날짜는  UTC(세계협정시)기준입니다.<br>한국에서는 매일 오전 9시에 오늘의 문제가 열립니다! <br>
 </p>
-<p class="subtitle lang-en">The date for Haroo Moeum follows UTC (Coordinated Universal Time).<br> In Korea, the daily puzzle opens at 9 AM each day!”</p>
+<p class="subtitle lang-en"> The date for Haroo Moeum follows UTC (Coordinated Universal Time).<br> In Korea, the daily puzzle opens at 9 AM each day!”</p>
         </div>
 
         <div class="game-board">        
