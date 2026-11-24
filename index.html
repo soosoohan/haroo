@@ -133,8 +133,19 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.25);
     transition: transform 0.1s;
 }
 
-        .game-board { background: #c3fafa; border-radius: 12px; box-shadow: 0 8px 32px rgba(74, 98, 138, 0.2); padding: 30px; margin-bottom: 20px; }
-        .sentence-display { text-align: center; margin-bottom: 0px; }
+.game-board { 
+  width: 90%;
+  max-width: var(--content-width);
+  box-sizing: border-box;
+  margin: auto;
+  background: #c3fafa; 
+  border-radius: 12px; 
+  box-shadow: 0 8px 32px rgba(74, 98, 138, 0.2); 
+  padding: 30px; 
+  margin-bottom: 20px; }
+        
+    
+         .sentence-display { text-align: center; margin-bottom: 0px; }
         .sentence-area { font-size: 3em; background: #c3fafa; padding: 30px; min-height: 120px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; line-height: 1.2; word-break: break-all; overflow-wrap: break-word; }
         .word-group { display: inline; flex-wrap: wrap; white-space: nowrap; align-items: center; margin-right: 0.3em; }
         .word-group:last-child { margin-right: 0; }
@@ -156,7 +167,17 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.25);
         .btn:hover { transform: translateY(-1px); box-shadow: 0 5px 15px rgba(74,98,138,.25); }
         .btn.secondary { background: linear-gradient(135deg, #B9E5E8, #7AB2D3); color:#123; }
 
-        .consonant-section { background: #c3fafa; border-radius: 12px; box-shadow: 0 8px 32px rgba(74, 98, 138, 0.2); padding: 30px; margin-bottom: 20px; }
+        .consonant-section { 
+           width: 90%;
+           max-width: var(--content-width);
+           box-sizing: border-box;
+           margin: auto;
+           background: #c3fafa; 
+           border-radius: 12px; 
+           box-shadow: 0 8px 32px rgba(74, 98, 138, 0.2); 
+           padding: 30px; 
+           margin-bottom: 20px; }
+    
         .consonant-title { font-size: 1.3em; font-weight: 600; margin-bottom: 20px; text-align: center; color: #4A628A; }
         .consonant-grid { grid-template-columns: repeat(7, 1fr); gap: 10px; display: flex; flex-wrap: wrap; }
         .consonant-btn { width: 72px; height: 72px; font-size: 1.8em; font-weight: bold; border-radius: 8px; border: 2px solid; cursor: pointer; transition: all 0.2s; }
