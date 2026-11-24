@@ -90,17 +90,17 @@
     position: fixed;
     top: 16px;
     right: 16px;
-    background: #2a2a4a;
+    background: #a6e3e3;
     border: 1px solid #444;
     border-radius: 20px;
     padding: 6px 14px;
-    color: #f0c040;
+    color: #145454;
     font-size: 0.85rem;
     cursor: pointer;
     z-index: 100;
     transition: background 0.2s;
   }
-  #lang-toggle:hover { background: #3a3a6a; }
+  #lang-toggle:hover { background: #a6e3e3; }
 
   .lang-ko, .lang-en { transition: opacity 0.2s; }
   body.en .lang-ko { display: none; }
@@ -179,24 +179,45 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.25);
     
         .consonant-title { font-size: 1.3em; font-weight: 600; margin-bottom: 20px; text-align: center; color: #4A628A; }
         .consonant-grid { grid-template-columns: repeat(7, 1fr); gap: 10px; display: flex; flex-wrap: wrap; }
-        .consonant-btn { width: 72px; height: 72px; font-size: 1.8em; font-weight: bold; border-radius: 8px; border: 2px solid; cursor: pointer; transition: all 0.2s; }
+        .consonant-btn { width: 65px; height: 65px; font-size: 1.8em; font-weight: bold; border-radius: 8px; border: 2px solid; cursor: pointer; transition: all 0.2s; }
         .consonant-btn.available { background: linear-gradient(135deg, #B9E5E8, #DFF2EB); color: #4A628A; border-color: #7AB2D3; }
         .consonant-btn.available:hover { background: linear-gradient(135deg, #7AB2D3, #B9E5E8); color: white; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(74, 98, 138, 0.3); }
         .consonant-btn.correct { background: #7AB2D3; color: white; border-color: #4A628A; }
         .consonant-btn.wrong { background:#f8caca; color: #7AB2D3; border-color: #B9E5E8; cursor: not-allowed; }
 
-        .game-info { 
-          width: 90%;
-          max-width: var(--content-width);
-          box-sizing: border-box;
-          margin: auto;
-          display: flex; 
-          justify-content: space-between; 
-          align-items: center; 
-          margin-bottom: 20px; }
-        .stats { font-size: 1.3em; color: #e37bad; }
-        .new-game-btn { background: #bae6d7; color: #2e8b8b; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 1em; transition: all 0.3s ease; }
-        .new-game-btn:hover { background: linear-gradient(135deg, #4A628A, #7AB2D3); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(74, 98, 138, 0.3); }
+        .game-info {
+  width: 90%;
+  max-width: var(--content-width);
+  box-sizing: border-box;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+        .stats { font-size: 1.3em; color: #e37bad; white-space: nowrap; }
+
+.btn-group {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+}
+.new-game-btn {
+  white-space: nowrap;
+  padding: 10px 14px;
+  background: #bae6d7; 
+  color: #2e8b8b; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  font-size: 1em; 
+  transition: all 0.3s ease; }
+  
+.new-game-btn p { margin: 0; }
+
+.new-game-btn:hover { background: linear-gradient(135deg, #4A628A, #7AB2D3); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(74, 98, 138, 0.3); }
         .credits { margin-top: 50px; font-size: 0.9em; color: #B9E5E8 ; background: #145454 ; padding: 20px; border-radius: 10px; width: 300px; justify-content: center; }
 
         @media (max-width: 600px) {
@@ -205,8 +226,7 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.25);
             .sentence-area { font-size: 1.8em; padding: 10px; min-height: 80px; word-break: break-all; overflow-wrap: anywhere; }
             .consonant-section { margin-bottom: 10px; margin-top: 10px; }
             .consonant-grid { grid-template-columns: repeat(5, 1fr); }
-            .consonant-btn { width: 60px; height: 60px; font-size: 1.3em; font-weight: bold; }
-            .game-info { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .consonant-btn { width: 50px; height: 50px; font-size: 1.3em; font-weight: bold; }
             .container { padding: 0px; }
         }
   @media (max-width: 480px) {
@@ -215,7 +235,10 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.25);
     left: 10px;
     width: 40px;
     height: 40px;
-  }}
+  }
+  .stats { font-size: 1.05em; }
+  .new-game-btn { padding: 8px 10px; font-size: 0.9em; }
+}
 
     </style>
 </head>
@@ -294,19 +317,21 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.25);
             <h3 class="consonant-title lang-en">Choose a consonant. </h3>
             <div class="consonant-grid" id="consonantGrid"><!-- 자음 버튼 --></div>
         </div>
-      <div class="game-info">
-    <div class="stats" id="gameStats">
-        <span class="lang-ko">맞음</span><span class="lang-en"> Correct</span>: 0 |
-        <span class="lang-ko"> 틀림</span><span class="lang-en"> Incorrect</span> : 0
-    </div>
-            <button class="new-game-btn" onclick="startNewGame()"><p class="lang-ko">다시 하기</p><p class="lang-en"> Retry</p></button>
-            <button class="new-game-btn" onclick="location.href='index.html'" class="game-button"><p class="lang-ko">초기 화면</p><p class="lang-en"> Home</p></button>
-        </div>
 
+<div class="game-info">
+  <div class="stats" id="gameStats">
+           <span class="lang-ko">맞음</span><span class="lang-en"> Correct</span>: 0 |
+        <span class="lang-ko"> 틀림</span><span class="lang-en"> Incorrect</span> : 0
+
+  </div>
+  <div class="btn-group">
+    <button class="new-game-btn" onclick="startNewGame()"><p class="lang-ko">다시 하기</p><p class="lang-en"> Retry</p></button>
+    <button class="new-game-btn" onclick="location.href='index.html'"><p class="lang-ko">초기 화면</p><p class="lang-en"> Home</p></button>
+  </div>
+</div>
         <div class="credits">       
             <p> © 2025 Soosoo Han. All rights reserved.</p>
         </div>
-    </div>
   </div>
 <script>
 
