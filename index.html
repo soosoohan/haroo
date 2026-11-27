@@ -69,74 +69,82 @@
       * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body { font-family: 'Malgun Gothic', sans-serif; background: #145454; min-height: 100vh; padding: 20px; }
-        .container { max-width: 800px; margin: 0 auto; }
-        .header { text-align: center; margin-bottom: 30px; }
+     
+    .toolbar {
+  margin: 0 auto;   
+  padding: 6px 0;    
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  width: 800px;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+ }
+
+    .back-button {
+  margin-left: 44px;
+  flex-shrink: 0;
+  width: 44px; height: 44px; padding: 0;
+  background: transparent; border: none;
+  border-radius: 22%; cursor: pointer; overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+ .back-button img {width: 100%;height: 100%;object-fit: cover;display: block;}
+
+  .back-button:active {transform: scale(0.92);transition: transform 0.1s;}
+
+    
+     #lang-toggle {
+    display: flex;
+    margin-right: 6px;
+    background: #145454;
+    border: 2px solid #a9f5f5;
+    border-radius: 10px;
+    padding: 6px 14px;
+    color: #a9f5f5;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 100;
+    transition: background 0.2s;
+    gap: 4px;
+     }
+
+  #lang-toggle:hover { background: #145454; }
+
+  .lang-ko, .lang-en { transition: opacity 0.2s; }
+  body.en .lang-ko { display: none; }
+  body.ko .lang-en { display: none; }
+
+header {
+  text-align: center;
+  margin: 0 auto 30px;
+  max-width: 800px;
+}
 .banner-title {
-    margin-top: 60px;   /* 위쪽 여백 */
-    margin-bottom: 20px;   
+    margin: 0 0 20px;      
     font-size: 0;
 }
 
 .banner-title img {
   display: block;
   width: 100%;
-  max-width: var(--content-width);
+  max-width: 800px;
   height: auto;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   border-radius: 10px;
 }  
+
+  .container { max-width: 800px; margin: 0 auto; }
   .title { font-size: 2.5em; font-weight: bold; color: #B9E5E8; margin-bottom: 10px; }
         .subtitle { color: #B9E5E8; font-size: 1.1em; }
- #lang-toggle {
-    position: fixed;
-    top: 16px;
-    right: 16px;
-    background: #a6e3e3;
-    border: 1px solid #444;
-    border-radius: 20px;
-    padding: 6px 14px;
-    color: #145454;
-    font-size: 0.85rem;
-    cursor: pointer;
-    z-index: 100;
-    transition: background 0.2s;
-  }
-  #lang-toggle:hover { background: #a6e3e3; }
-
-  .lang-ko, .lang-en { transition: opacity 0.2s; }
-  body.en .lang-ko { display: none; }
-  body.ko .lang-en { display: none; }
- .back-button {
-    position: fixed; 
-top: max(48px, env(safe-area-inset-top) + 20px); 
-left: 22px; 
-width: 44px;
-height: 44px;
-padding: 0;
-background: transparent;
-order: none;
-border-radius: 22%;
-cursor: pointer;
-z-index: 100; 
-overflow: hidden; 
-box-shadow: 0 2px 6px rgba(0,0,0,0.25); 
-} 
-
-.back-button img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.back-button:active {
-    transform: scale(0.92);
-    transition: transform 0.1s;
-}
-
+    
 .game-board { 
   width: 100%;
-  max-width: var(--content-width);
+  max-width: 800px;
   box-sizing: border-box;
   margin: auto;
   background: #c3fafa; 
@@ -221,42 +229,34 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.25);
 .new-game-btn:hover { background: linear-gradient(135deg, #4A628A, #7AB2D3); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(74, 98, 138, 0.3); }
         .credits { margin-top: 50px; font-size: 0.9em; color: #B9E5E8 ; background: #145454 ; padding: 20px; border-radius: 10px; width: 300px; justify-content: center; }
 
-        @media (max-width: 600px) {
-            .title { font-size: 1.8em; }
-            .game-board { margin-bottom: 10px; }
-            .sentence-area { font-size: 1.8em; padding: 10px; min-height: 80px; word-break: break-all; overflow-wrap: anywhere; }
-            .consonant-section { margin-bottom: 10px; margin-top: 10px; }
-            .consonant-grid { grid-template-columns: repeat(5, 1fr); }
-            .consonant-btn { width: 50px; height: 50px; font-size: 1.3em; font-weight: bold; }
-            .container { padding: 0px; }
-        }
-  @media (max-width: 480px) {
-  .back-button {
-    top: 10px;
-    left: 10px;
-    width: 40px;
-    height: 40px;
-  }
-  .stats { font-size: 1.05em; }
-  .new-game-btn { padding: 8px 10px; font-size: 0.9em; }
-}
+header { display: flow-root; height: auto !important; }
+.banner-title { height: auto !important; }
+.banner-title img { position: static !important; float: none !important; }
+
+       
 
     </style>
 </head>
 <body data-game-id="haroomoeum" data-game-type="index"  class="ko" onload="initLanguage()">
+ <link rel="stylesheet" href="toolbar.css">
+
+<div class="toolbar">
   <button class="back-button" onclick="location.href='https://soosooland.com/'" aria-label="수수랜드 홈으로">
   <img src="https://soosooland.com/images/home.png" alt="수수랜드 홈">
-  </button>
-
+</button>
+  <div class="lang-toggle">
 <button id="lang-toggle" onclick="toggleLang()">English</button>
-    <div class="container">
-        <div class="header">
-     <h1 class="banner-title">
-    <img src="https://soosooland.com/haroo/banner.jpeg" alt="하루모음 Daily Moeum"></h1>
+ </div><!--lang-toggle  -->
+</div> <!-- .toolbar -->
+
+<header>
+  <h1 class="banner-title">
+  <img src="https://soosooland.com/haroo/banner.jpeg" alt="하루모음 Daily Moeum"></h1>
       
   <p class="subtitle lang-ko">하루 한 문제, 오늘의 속담을 맞혀 보세요!<br>하루모음의 날짜는 UTC(세계협정시) 기준입니다.<br>한국에서는 매일 오전 9시에 오늘의 문제가 열립니다!</p>
   <p class="subtitle lang-en">Guess today's Korean proverb, one puzzle a day!<br>The date for Daily Moeum follows UTC (Coordinated Universal Time).</p>
-      </div>
+  
+</header>
 
         <div class="game-board">        
 <div class="sentence-display">
@@ -333,7 +333,6 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.25);
         <div class="credits">       
             <p> © 2025 Soosoo Han. All rights reserved.</p>
         </div>
-  </div>
 <script>
 
 function toggleLang() {
